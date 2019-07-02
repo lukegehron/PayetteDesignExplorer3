@@ -15,11 +15,11 @@
 
   <!-- Bootstrap -->
   <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
-    <!-- BootstrapJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- BootstrapJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -39,23 +39,25 @@
   <!-- Custom CSS styling -->
   <link rel="stylesheet" href="./src/css/style.css" />
 
+  
+
   <title>Payette | Design Explorer</title>
 </head>
 
 <body>
   <!-- <div class="container"> -->
-    <div class="row">
-      <div class="col-12">
-  <!-- page header -->
-  <div id="header">
-    <!-- <h3>Payette's Super Awesome Lite Designer for Exploration</h3> -->
-    <!-- <img class="logo" src="src/img/Payette-Logo-Black-Web.png" alt="Temperature Legend" width="220px"> -->
-    <!-- Button to Open the gettingDataPopup -->
-    <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#loadingDataView">
+  <div class="row">
+    <div class="col-12">
+      <!-- page header -->
+      <div id="header">
+        <!-- <h3>Payette's Super Awesome Lite Designer for Exploration</h3> -->
+        <!-- <img class="logo" src="src/img/Payette-Logo-Black-Web.png" alt="Temperature Legend" width="220px"> -->
+        <!-- Button to Open the gettingDataPopup -->
+        <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#loadingDataView">
       Get Data
     </button> -->
-    <!-- Button to Open the setting -->
-    <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settingView" onclick="drawSettingViewBody()">
+        <!-- Button to Open the setting -->
+        <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settingView" onclick="drawSettingViewBody()">
       Settings
     </button>
   </div><br><hr><br><br> -->
@@ -124,14 +126,14 @@
           <div class="modal-dialog">
             <div class="modal-content"> -->
 
-              <!-- Modal Header -->
-              <!-- <div class="modal-header">
+        <!-- Modal Header -->
+        <!-- <div class="modal-header">
                 <h4 class="modal-title">Static link</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div> -->
 
-              <!-- Modal body -->
-              <!-- <div class="modal-body">
+        <!-- Modal body -->
+        <!-- <div class="modal-body">
                 <h5>Link for share </h5>
                 <p>
                   <code id="myStudyID">Not available</code>
@@ -149,8 +151,8 @@
 
               </div> -->
 
-              <!-- Modal footer -->
-              <!-- <div class="modal-footer">
+        <!-- Modal footer -->
+        <!-- <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               </div>
 
@@ -227,27 +229,27 @@
         </div>
       </div>
     </div>
-  <!-- </div> -->
+    <!-- </div> -->
 
-  <script>
-    window.onload = function() {
-      var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+    <script>
+      window.onload = function() {
+        var isIE = /*@cc_on!@*/ false || !!document.documentMode;
 
-      if (isIE) {
-        alert("Please use modern browsers to ensure the maximized experience.\n\nGoogle Chrome, or Firefox is suggested to use.");
+        if (isIE) {
+          alert("Please use modern browsers to ensure the maximized experience.\n\nGoogle Chrome, or Firefox is suggested to use.");
+        }
+
+        if (window.location.href.toUpperCase().search("ID=") > 0) {
+          // d3.select("#welcome").style("display", "none");
+          LoadFromCloud("URL");
+        } else {
+          // load the sample project automatically
+          // loadFromUrl('https://drive.google.com/drive/folders/14fhftDFou0htwqsQEg4dwLDm_G7h-PZH')
+          loadFromUrl('https://drive.google.com/drive/folders/14fhftDFou0htwqsQEg4dwLDm_G7h-PZH')
+
+        }
       }
-
-      if (window.location.href.toUpperCase().search("ID=") > 0) {
-        // d3.select("#welcome").style("display", "none");
-        LoadFromCloud("URL");
-      } else {
-        // load the sample project automatically
-        // loadFromUrl('https://drive.google.com/drive/folders/14fhftDFou0htwqsQEg4dwLDm_G7h-PZH')
-        loadFromUrl('https://drive.google.com/drive/folders/14fhftDFou0htwqsQEg4dwLDm_G7h-PZH')
-
-      }
-    }
-  </script>
+    </script>
 </body>
 
 </html>

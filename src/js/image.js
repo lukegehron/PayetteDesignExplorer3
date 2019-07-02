@@ -3,7 +3,7 @@ buildImage = function(imageName, propertiesDict) {
   // set default values
   width=12
   height=4
-  margin={top:10,right:10,bottom:10,left:10}
+  margin={top:0,right:0,bottom:0,left:0}
 
   // check the properties dictionary to see if any are overridden
   if ("width" in propertiesDict){

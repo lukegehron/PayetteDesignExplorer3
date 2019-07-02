@@ -3,7 +3,7 @@
 buildChart = function(dataList, propertiesDict) {
   // set default values
   dataNames=[]
-  dataColors =["rgb(142,148,169)","rgb(185,223,240)","rgb(168,175,178)","rgb(233,186,126)","rgb(199,194,105)","rgb(201,222,158)","rgb(158,188,140)","rgb(198,166,155)","rgb(227,220,192)","rgb(176,124,173)"]
+  dataColors =[]
   stacked=true,
   yAxisText=['Value','units']
   maxVal=null
@@ -15,9 +15,9 @@ buildChart = function(dataList, propertiesDict) {
   if ("dataNames" in propertiesDict){
     dataNames = propertiesDict["dataNames"]
   }
-  // if ("dataColors" in propertiesDict){
-  //   dataColors = propertiesDict["dataColors"]
-  // }
+  if ("dataColors" in propertiesDict){
+    dataColors = propertiesDict["dataColors"]
+  }
   if ("stacked" in propertiesDict){
     stacked = propertiesDict["stacked"]
   }
@@ -71,7 +71,7 @@ buildChart = function(dataList, propertiesDict) {
 
   // auto-generate colors if they are empty.
   if (dataColors.length == 0){
-    var f=d3.interpolateHsl("rgb(255,0,0)", "rgb(0,0,00)")
+    var f=d3.interpolateHsl("rgb(255,0,102)", "rgb(0,176,240)")
     for (var i=0; i<dataList.length; i++) {
       dataColors.push(f(i/(dataList.length-1)))
     }
@@ -123,14 +123,14 @@ buildChart = function(dataList, propertiesDict) {
   // add the legend
     spacerIncrement = 0
     for (i = 0; i < dataList.length; i++) {
-      svg.append("circle")
-        .attr("cx", svgwidth - 6)
-        .attr("cy", margin.top + spacerIncrement + 6)
-        .attr("r", 5)
-        //.attr("height", 10)
+      svg.append("rect")
+        .attr("x", svgwidth - 11)
+        .attr("y", margin.top + spacerIncrement)
+        .attr("width", 10)
+        .attr("height", 10)
         .attr('fill', dataColors[i])
         .style("stroke", "#000")
-        .style("stroke-width", "0em");
+        .style("stroke-width", "0.05em");
       svg.append("text")
         .attr("x",svgwidth - 15)
         .attr("y", margin.top + spacerIncrement)
@@ -155,7 +155,7 @@ buildChart = function(dataList, propertiesDict) {
         .attr('fill', dataColors[i])
         .attr("class", "dataBar")
         .style("stroke", "#000")
-        .style("stroke-width", "0.04em");
+        .style("stroke-width", "0.05em");
       stackIncrement += dataList[i]
     }
   } else{
@@ -168,7 +168,7 @@ buildChart = function(dataList, propertiesDict) {
           .attr('fill', dataColors[i])
         	.attr("class", "dataBar")
           .style("stroke", "#000")
-          .style("stroke-width", "0.04em");
+          .style("stroke-width", "0.05em");
 			}
   }
 

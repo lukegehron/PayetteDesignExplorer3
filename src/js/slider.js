@@ -1,5 +1,5 @@
-var oddSliderBackground = "background-color:#fff";
-var evenSliderBackground = "background-color:#fff";
+var oddSliderBackground = "background-color:#f2f2f2";
+var evenSliderBackground = "background-color:#f8f8f8";
 
 function makeInputSlider(name, unitSuffix, longName, max, isEven, columnName){
     //console.log('making input slider for name: '+name+' with unit suffix: '+unitSuffix);
